@@ -98,13 +98,19 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            ****.
+            Recent advancements in generative models have significantly advanced virtual try-on systems. 
+            However, existing approaches relying on open-source datasets and mask-based pipelines still suffer from critical limitations, 
+            including dataset bias and error propagation caused by imperfect garment masks. These issues often lead to suboptimal single-pass generation results, such as fragmented patterns, color discrepancies, 
+            and inconsistent garment lengths, primarily due to the model’s limited understanding of real-world try-on dynamics. 
           </p>
           <p>
-            ****.
+            To address this, we introduce Instruct-vton, the first framework to benchmark and optimize virtual try-on through multi-turn user-guided interactions. 
+            We curate a novel multi-turn dialogue dataset, augmented from existing open-source benchmarks, 
+            to simulate iterative refinement scenarios where users progressively clarify requirements (e.g., adjusting fit, correcting textures).
           </p>
           <p>
-            ****.
+            Our framework integrates an adaptive training strategy that dynamically incorporates user feedback to resolve ambiguities in garment geometry and appearance. Experiments demonstrate that Instruct-VTON achieves state-of-the-art performance across fidelity metrics (e.g., LPIPS, FID) and user studies compared to single-turn baselines. 
+            The experiment further show that our dataset and interaction paradigm significantly improve robustness to challenging poses and complex clothing designs.
           </p>
         </div>
       </div>
@@ -133,7 +139,8 @@
               alt="Upper show1."/>
         <img src="./static/images/upper/65.png"
               alt="Upper show2."/>
-        <p class="is-bold">From left to right: Upper Model Result</p>
+        <!-- <p class="is-bold">From left to right: Upper Model Result</p> -->
+        <h5 class="title is-5">From left to right: Upper Model Result</h5>
         <!--/ img. -->
 
         <!-- img. -->
@@ -148,7 +155,8 @@
         <img src="./static/images/lower/41.png"
               class="image"
               alt="Lower show2."/>
-        <p class="is-bold">From left to right: Lower Model Result</p>
+        <!-- <p class="is-bold">From left to right: Lower Model Result</p> -->
+        <h5 class="title is-5">From left to right: Lower Model Result</h5>
         <!--/ img. -->
 
         <!-- img. -->
@@ -162,7 +170,8 @@
               alt="Lower show1."/>
         <img src="./static/images/shoes/17.png"
               alt="Lower show2."/>
-        <p class="is-bold">From left to right: Shoes Model Result</p>
+        <h5 class="title is-5">From left to right: Shoes Model Result</h5>
+        <!-- <p class="is-bold">From left to right: Shoes Model Result</p> -->
         <br/>
         <!--/ img. -->
 
