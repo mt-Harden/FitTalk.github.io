@@ -45,3 +45,18 @@ $(document).ready(function() {
     bulmaSlider.attach();
 
 })
+
+// Initialize all carousels
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize cloth carousel
+  bulmaCarousel.attach('.carousel', {
+    slidesToScroll: 1,
+    slidesToShow: 3,
+    loop: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    navigation: true,
+    navigationKeys: true,
+    infinite: true,
+  });
+});

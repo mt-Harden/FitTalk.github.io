@@ -51,34 +51,24 @@
           <h1 class="title is-1 publication-title">FitTalk: Benchmarking Interactive Virtual Try-On via Multi-Turn Conversations</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="***">** *</a><sup>1</sup>,</span>
+              Anonymous Authors<sup>1</sup>,</span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Sun Yat-Sen University,</span>
+            <span class="author-block"><sup>1</sup>Anonymous Institution,</span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="****"
-                   class="external-link button is-normal is-rounded is-dark">
+                <a href="paper/FitTalk.pdf"
+                   class="external-link button is-normal is-rounded is-dark" target="_blank">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
                   <span>Paper</span>
                 </a>
-              </span>
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="****"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                  </a>
               </span>
             </div>
 
@@ -98,24 +88,32 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Recent advancements in generative models have significantly advanced virtual try-on systems. 
-            However, existing approaches relying on open-source datasets and mask-based pipelines still suffer from critical limitations, 
-            including dataset bias and error propagation caused by imperfect garment masks. These issues often lead to suboptimal single-pass generation results, such as fragmented patterns, color discrepancies, 
-            and inconsistent garment lengths, primarily due to the model’s limited understanding of real-world try-on dynamics. 
+            Virtual try-on (VTON) has advanced significantly due to generative models, but existing methods remain limited by static, single-pass pipelines that lack iterative refinement, resulting in fragmented textures, color mismatches, and inaccurate garment geometry. This static nature sharply contrasts with real-world fashion interactions, where users naturally engage in multi-turn dialogues to iteratively refine garment selection and fit.
           </p>
           <p>
-            To address this, we introduce Instruct-vton, the first framework to benchmark and optimize virtual try-on through multi-turn user-guided interactions. 
-            We curate a novel multi-turn dialogue dataset, augmented from existing open-source benchmarks, 
-            to simulate iterative refinement scenarios where users progressively clarify requirements (e.g., adjusting fit, correcting textures).
+            To bridge this gap, we introduce FitTalk, the first benchmark and framework explicitly designed for multi-turn interactive virtual try-on. FitTalk enables iterative garment refinement through natural language dialogue, closely mimicking realistic user-stylist interactions. Our primary contributions include: (1) constructing a large-scale dataset comprising 100,000 interactive try-on dialogues across 15 diverse garment and footwear categories, annotated with detailed refinement instructions and visual artifacts; (2) developing a unified multi-modal conditioning mechanism that integrates garment visuals, textual instructions, and prior dialogue contexts to support coherent, user-guided refinement; and (3) proposing an iterative multi-round training protocol that progressively enriches the model's refinement capabilities by leveraging high-quality, model-generated dialogue examples.
           </p>
           <p>
-            Our framework integrates an adaptive training strategy that dynamically incorporates user feedback to resolve ambiguities in garment geometry and appearance. Experiments demonstrate that Instruct-VTON achieves state-of-the-art performance across fidelity metrics (e.g., LPIPS, FID) and user studies compared to single-turn baselines. 
-            The experiment further show that our dataset and interaction paradigm significantly improve robustness to challenging poses and complex clothing designs.
+            Comprehensive evaluations demonstrate that FitTalk significantly outperforms traditional single-turn VTON baselines in both quantitative metrics and qualitative assessments via human preference studies. We also introduce FitMetric, an automated metric leveraging GPT-4 for efficiently evaluating multi-turn refinement quality in terms of garment alignment, color consistency, and identity preservation. By introducing iterative user interactions into the virtual try-on paradigm, FitTalk sets a new standard for interactive fashion generation. We release our dataset and implementation to facilitate future research in interactive, user-centric garment generation.
           </p>
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
+
+    <!-- Teaser Figure. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Framework</h2>
+        <div class="content has-text-justified">
+          <img src="./static/images/paper/framework.png"
+               class="image"
+               alt="Framework of our method"/>
+        </div>
+      </div>
+    </div>
+    <!--/ Teaser Figure. -->
+
   </div>
 </section>
 
@@ -127,6 +125,21 @@
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Virtual Try-On Show</h2>
+
+        <!-- Multi-turn Results -->
+        <h3 class="title is-4">Multi-turn Results</h3>
+        <img src="./static/images/multiturn/concat_00000004_swap.jpg" class="image" alt="Multi-turn result 1"/>
+        <img src="./static/images/multiturn/concat_00000006_swap.jpg" class="image" alt="Multi-turn result 2"/>
+        <img src="./static/images/multiturn/concat_00000007_swap.jpg" class="image" alt="Multi-turn result 3"/>
+        <img src="./static/images/multiturn/concat_00000026_swap.jpg" class="image" alt="Multi-turn result 4"/>
+        <img src="./static/images/multiturn/concat_00000036_swap.jpg" class="image" alt="Multi-turn result 5"/>
+        <img src="./static/images/multiturn/concat_00000039_swap.jpg" class="image" alt="Multi-turn result 6"/>
+        <img src="./static/images/multiturn/concat_00000041_swap.jpg" class="image" alt="Multi-turn result 7"/>
+        <img src="./static/images/multiturn/concat_00000043_swap.jpg" class="image" alt="Multi-turn result 8"/>
+        <img src="./static/images/multiturn/concat_00000047_swap.jpg" class="image" alt="Multi-turn result 9"/>
+        <img src="./static/images/multiturn/concat_00000052_swap.jpg" class="image" alt="Multi-turn result 10"/>
+        <h5 class="title is-5">Multi-turn Interactive Try-on Results (From left to right: Original Image, Generated Result, Target Garment)</h5>
+        <br/>
 
         <!-- img. -->
         <h3 class="title is-4">Try-On Cloth</h3>
@@ -147,17 +160,11 @@
         <img src="./static/images/cloth/single6.png"
               class="image"
               alt="Cloth show2."/>
-        <!-- <p class="is-bold">From left to right: Lower Model Result</p> -->
         <h5 class="title is-5">From left to right: Cloth Model Result</h5>
         <!--/ img. -->
 
         <!-- img. -->
         <h3 class="title is-4">Try-On Shoes</h3>
-        <!-- <div class="content has-text-justified">
-          <p>
-            Put the shoes on the designated model.
-          </p>
-        </div> -->
         <img src="./static/images/shoes/all.png"
               alt="Shoes show0."/>
         <img src="./static/images/shoes/single.png"
@@ -171,7 +178,6 @@
         <img src="./static/images/shoes/single5.png"
               alt="Shoes show5."/>
         <h5 class="title is-5">From left to right: Shoes Model Result</h5>
-        <!-- <p class="is-bold">From left to right: Shoes Model Result</p> -->
         <br/>
         <!--/ img. -->
 
@@ -185,15 +191,15 @@
 </section>
 
 
-<section class="section" id="BibTeX">
+<section class="section" id="HuggingFace">
   <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{xxxxxxxxxxx,
-  author    = {xxxx, xxxx, xxxx, xxxx and xxxx, xxxx and xxxx, xxxx and xxxx, xxxx and xxxx, xxxx},
-  title     = {FitTalk: Benchmarking Interactive Virtual Try-On via Multi-Turn Conversations},
-  journal   = {NeurIPS},
-  year      = {2025},
-}</code></pre>
+    <h2 class="title">Dataset</h2>
+    <p>
+      本项目数据Hugging Face地址：
+      <a href="https://huggingface.co/datasets/harvey59/FitTalk" target="_blank">
+        https://huggingface.co/datasets/harvey59/FitTalk
+      </a>
+    </p>
   </div>
 </section>
 
